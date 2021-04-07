@@ -125,5 +125,3 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-print(STATIC_URL)
