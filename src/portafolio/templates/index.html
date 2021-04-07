@@ -1,5 +1,203 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head_title %}Dev Gabriela Barrera{% endblock head_title %}
 
 {% block content %}
-<h1>Index</h1>
+<!-- Header -->
+<section id="header">
+  <div class="header container">
+    <div class="nav-bar">
+      <div class="brand">
+        <a href="#hero"><h1><span>G</span>ABRIELA <span>B</span>ARRERA</h1></a>
+      </div>
+      
+      <div class="nav-list">
+        <div class="hamburger"><div class="bar"></div></div>
+          <ul>
+            <li><a href="#hero" data-after="Home">INICIO</a></li>
+            <li><a href="#services" data-after="Service">HERRAMIENTAS</a></li>
+            <li><a href="#projects" data-after="Projects">PORTAFOLIO</a></li>
+            <li><a href="#about" data-after="About">SOBRE MÍ</a></li>
+            <li><a href="#contact" data-after="Contact">CONTACTO</a></li>
+            
+          </ul>
+        </div>
+      </div>
+  </div>
+</section>
+<!-- End Header -->
+
+
+<!-- Hero Section  -->
+<section id="hero">
+  <div class="hero container">
+    <div>
+      <h1>BIENVENIDO, <span></span></h1>
+      <h1>SOY GABRIELA BARRERA <span></span></h1>
+      <h1>INGENIERA EN COMPUTACIÓN<span></span></h1>
+      <a href="#projects" type="button" class="cta">PORTAFOLIO</a>
+    </div>
+  </div>
+</section>
+<!-- End Hero Section  -->
+
+<!-- Service Section -->
+<section id="services">
+  <div class="services container">
+    <div class="service-top">
+      <h1 class="section-title">HERRA<span>M</span>IENTAS</h1>
+
+    </div>
+    <div class="service-bottom">
+      <div class="service-item">
+        <div class="icon"><img src="{% static 'img/python_herramienta.png' %}"/></div>
+        <h2>PYTHON</h2>
+        <p>Avanzado: Sintaxis, ... ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀  ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀</p>
+      </div>
+      <div class="service-item">
+        <div class="icon"><img src="{% static 'img/django_herramienta.png' %}"/></div>
+        <h2>DJANGO</h2>
+        <p>Avanzado: Sintaxis, ... ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀  ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀</p>
+      </div>
+      <div class="service-item">
+        <div class="icon"><img src="{% static 'img/postgresql_herramienta.png' %}"/></div>
+        <h2>BD RELACIONALES</h2>
+        <p>Avanzado: Sintaxis, ... ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀  ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀</p>
+      </div>
+      <div class="service-item">
+        <div class="icon"><img src="{% static 'img/mongodb_herramienta.png' %}"/></div>
+        <h2>NoSQL</h2>
+        <p>Avanzado: Sintaxis, ... ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀  ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Service Section -->
+
+<!-- Projects Section -->
+<section id="projects">
+  <div class="projects container">
+    <div class="projects-header">
+      <h1 class="section-title">PORTAFOLIO <span>PROYECTOS</span></h1>
+    </div>
+    <div class="all-projects">
+      <div class="project-item">
+        <div class="project-info">
+          <h1>PROYECTO 1</h1>
+          <h2>DJANGO DEVELOPER, DELAPORTE DIGITAL</h2>
+          <p>DIC 2020 - FEB 2021</p>
+          <p>Plataforma para la inscripción de Ferias de emprendimiento, utilizando Django 3.1.4, DRF.</p>
+        </div>
+        <div class="project-img">
+          <img src="{% static 'img/Experiencia_P1.png' %}" alt="img">
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-info">
+          <h1>PROYECTO 2</h1>
+          <h2>VALIDACIÓN DE TRANSACCIONES, CRT LTDA</h2>
+          <p>SEP 2020 - FEB 2021</p>
+          <p>Implementé una solución completa en Python para realizar el cruce de
+            información entre diferentes fuentes de información (Transbank y Bsale) de manera
+            semiautomática, ayudando al usuario a disminuir los tiempos en más de un 80%,
+            permitiendole así, tener más tiempo disponible para otras labores. Utilicé Pandas y
+            Tkinter.</p>
+        </div>
+        <div class="project-img">
+          <img src="{% static 'img/Experiencia_P2.png' %}" alt="img">
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-info">
+          <h1>PROYECTO 3</h1>
+          <h2>SOFTWARE ANDES, LABORATORIO DE GEOESTADÍSTICA, UNIVERSIDAD DE CHILE</h2>
+          <p>FEB 2020 - ENE 2021</p>
+          <p>Desarrollé una solución completa en Python de actualización de un software, por
+            medio de un script, lo cual permitió disminuir la tasa de errores humanos y los
+            tiempos de realización del empaquetamiento casi a la mitad, además de ya no
+            prescindir de una persona experta para realizar este proceso.</p>
+        </div>
+        <div class="project-img">
+          <img src="{% static 'img/Experiencia_P3.png' %}" alt="img">
+        </div>
+      </div>
+      
+      <div class="project-item">
+        <div class="project-info">
+          <h1>PROYECTO 4</h1>
+          <h2>CAMPUS DIGITAL, ULS, LA SERENA</h2>
+          <p>ABR 2018 - JUL 2018</p>
+          <p>Desarrollé mi primer sitio web con Django v1.8, el cual permitía la publicación de
+            artículos de la Universidad en formato de Flipbook (mediante la carga de archivos
+            PDF), noticias y publicaciones varias relacionadas con la Universidad.</p>
+        </div>
+        <div class="project-img">
+          <img src="{% static 'img/Experiencia_P4.png' %}" alt="img">
+        </div>
+      </div>
+</section>
+<!-- End Projects Section -->
+
+<!-- About Section -->
+<section id="about">
+  <div class="about container">
+    <div class="col-left">
+      <div class="about-img">
+        <img src="{% static 'img/Sobre_mi2.png' %}" alt="img">
+      </div>
+    </div>
+    <div class="col-right">
+      <h1 class="section-title">SOBRE <span>MÍ</span></h1>
+      <h2>INGENIERA EN COMPUTACIÓN - UNIVERSIDAD DE LA SERENA</h2>
+      <p>Titulada de Ingeniería en Computación en la Universidad de La Serena, tengo un
+        alto sentido de exigencia y responsabilidad en lo que hago, con muchas ganas de
+        aprender y aplicar los conocimientos que voy adquiriendo a lo largo de mi carrera.
+        Me encanta trabajar en equipo, tratando de aportar ayudando en lo que pueda a
+        los demás a resolver problemas, si tienen dudas de código u dudas técnicas. Soy
+        bastante persistente cuando se me presenta alguna problemática, de intentar llegar
+        a la solución.
+        </p>
+      <a href="" class="cta">DESCARGAR CV</a>
+    </div>
+  </div>
+</section>
+<!-- End About Section -->
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="contact container">
+    <div><h1 class="section-title">INFORMACIÓN DE <span>CONTACTO</span></h1></div>
+    <div class="contact-items">
+      <div class="contact-item">
+        <div class="icon"><img src="{% static 'img/Telefono.png' %}"/></div>
+        <div class="contact-info">
+          <h1>TELÉFONO</h1>
+          <h2>+569 3058 7446</h2>
+          
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="icon"><img src="{% static 'img/Mail.png' %}"/></div>
+        <div class="contact-info">
+          <h1>EMAIL</h1>
+          <h2>g.barrera.angel@gmail.com</h2>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="icon"><img src="{% static 'img/ubicacion.png' %}"/></div>
+        <div class="contact-info">
+          <h1>DIRECCIÓN</h1>
+          <h2>La Serena, Chile</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Contact Section -->
+
+
+
 {% endblock content %}
