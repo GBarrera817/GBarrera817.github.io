@@ -21,7 +21,7 @@ Ingeniera que mantiene sistemas críticos de un hospital público (C#, GeneXus/E
 - Proyectos privados se describen sin enlace al código.
 
 ## Evidence on Hand
-- CV: C:\Users\Gabriela Barrera\Desktop\cv_2026.pdf (experiencia, educación, certificaciones, idiomas).
+- CV: CV 2026 en PDF (archivo local, no publicado) (experiencia, educación, certificaciones, idiomas).
 - Descripciones de repos en github.com/GBarrera817.
 - No hay foto, capturas de las apps ni testimonios: no inventarlos.
 
