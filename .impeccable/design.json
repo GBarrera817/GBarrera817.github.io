@@ -1,126 +1,305 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-19T00:00:00Z",
+  "generatedAt": "2026-11-19T12:00:00Z",
   "title": "Design System: Gabriela Barrera Ángel",
   "extensions": {
     "colorMeta": {
-      "ultra": { "role": "primary", "displayName": "Booklet Ultramarine", "canonical": "#1b2fd0", "tonalRamp": ["#0a1150", "#101a7a", "#1423a6", "#1b2fd0", "#4256e0", "#6f7fe6", "#a4adf2", "#dfe3fd"] },
-      "ultra-deep": { "role": "primary", "displayName": "Back-Cover Ultramarine", "canonical": "#1423a6", "tonalRamp": ["#080e45", "#0d1670", "#1423a6", "#2534c0", "#4a57d4", "#7a84e3", "#aeb4f0", "#e1e4fb"] },
-      "obi": { "role": "secondary", "displayName": "Obi Lemon", "canonical": "#e4f33b", "tonalRamp": ["#3a3e08", "#5e6510", "#878f17", "#b3be22", "#e4f33b", "#ecf76d", "#f3fa9f", "#fafdd6"] },
-      "ink": { "role": "neutral", "displayName": "Obi Ink", "canonical": "#0c0f24", "tonalRamp": ["#0c0f24", "#1c2140", "#2e345c", "#454c78", "#646a94", "#8b90b2", "#b6b9d0", "#e3e4ee"] },
-      "paper": { "role": "neutral", "displayName": "White Ink", "canonical": "#f5f7ff", "tonalRamp": ["#1d2140", "#3a4070", "#5d64a0", "#8a90c8", "#b4b9e6", "#d6daf7", "#e9ecfd", "#f5f7ff"] },
-      "paper-2": { "role": "neutral", "displayName": "Tinted White", "canonical": "#c9d0ff", "tonalRamp": ["#1a1f5c", "#2f378c", "#4851b8", "#6a73da", "#959df0", "#c9d0ff", "#e0e4ff", "#f2f4ff"] },
-      "rule": { "role": "neutral", "displayName": "Rule Blue", "canonical": "#6f7fe6", "tonalRamp": ["#141a52", "#232d85", "#3846b5", "#5263d6", "#6f7fe6", "#97a3ef", "#c0c8f7", "#e7eafd"] }
+      "prompt-green": {
+        "role": "primary",
+        "displayName": "Prompt Green",
+        "canonical": "#4ee38a",
+        "tonalRamp": [
+          "#0d2a19",
+          "#14462a",
+          "#1d673e",
+          "#278b53",
+          "#33b06a",
+          "#4ee38a",
+          "#8ff0b5",
+          "#d3f9e2"
+        ]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Amber",
+        "canonical": "#ffb547",
+        "tonalRamp": [
+          "#2e1d05",
+          "#4d310a",
+          "#734a10",
+          "#9c6517",
+          "#c9821f",
+          "#ffb547",
+          "#ffd08c",
+          "#ffedd2"
+        ]
+      },
+      "error-red": {
+        "role": "tertiary",
+        "displayName": "Error Red",
+        "canonical": "#ff7a6b",
+        "tonalRamp": [
+          "#2e0e0a",
+          "#4f1812",
+          "#76241b",
+          "#a03226",
+          "#cf4a3b",
+          "#ff7a6b",
+          "#ffaea4",
+          "#ffe1dd"
+        ]
+      },
+      "phosphor-black": {
+        "role": "neutral",
+        "displayName": "Phosphor Black",
+        "canonical": "#0b100d",
+        "tonalRamp": [
+          "#0b100d",
+          "#111a15",
+          "#22332a",
+          "#3b5246",
+          "#5a7766",
+          "#7a9a85",
+          "#a6c4b0",
+          "#d9ebdf"
+        ]
+      },
+      "phosphor-black-raised": {
+        "role": "neutral",
+        "displayName": "Phosphor Black Raised",
+        "canonical": "#111a15",
+        "tonalRamp": [
+          "#0b100d",
+          "#111a15",
+          "#22332a",
+          "#3b5246",
+          "#5a7766",
+          "#7a9a85",
+          "#a6c4b0",
+          "#d9ebdf"
+        ]
+      },
+      "phosphor-text": {
+        "role": "neutral",
+        "displayName": "Phosphor Text",
+        "canonical": "#c4f2d0",
+        "tonalRamp": [
+          "#14281a",
+          "#24452e",
+          "#386646",
+          "#518a62",
+          "#72b083",
+          "#99d4a9",
+          "#c4f2d0",
+          "#e8fbed"
+        ]
+      },
+      "moss-dim": {
+        "role": "neutral",
+        "displayName": "Moss Dim",
+        "canonical": "#7a9a85",
+        "tonalRamp": [
+          "#131c16",
+          "#22332a",
+          "#3b5246",
+          "#5a7766",
+          "#7a9a85",
+          "#9ab5a3",
+          "#bdd1c4",
+          "#e0ebe4"
+        ]
+      },
+      "grid-line": {
+        "role": "neutral",
+        "displayName": "Grid Line",
+        "canonical": "#22332a",
+        "tonalRamp": [
+          "#0b100d",
+          "#111a15",
+          "#22332a",
+          "#3b5246",
+          "#5a7766",
+          "#7a9a85",
+          "#a6c4b0",
+          "#d9ebdf"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Cover name only; second line in obi lemon." },
-      "track-numeral": { "displayName": "Track Numeral", "purpose": "CSS-counter track numbers with leading zero; 2.8rem on mobile." },
-      "headline": { "displayName": "Headline", "purpose": "Disc titles, followed by an obi-lemon kana tag." },
-      "title": { "displayName": "Title", "purpose": "Track titles." },
-      "body": { "displayName": "Body", "purpose": "Descriptions and notes, max 62ch." },
-      "label": { "displayName": "Label", "purpose": "Uppercase catalog strip, obi top line, side metadata, notes headings, colophon." },
-      "kana": { "displayName": "Kana", "purpose": "Obi katakana name set vertical-rl; horizontal on mobile. Obi Kana is a glyph subset." }
+      "body": {
+        "displayName": "Body",
+        "purpose": "All output and project descriptions."
+      },
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Whole body under 640px."
+      },
+      "body-strong": {
+        "displayName": "Body Strong",
+        "purpose": "Prompt, neofetch host and keys, names, project name in cat frames at body size."
+      },
+      "prompt": {
+        "displayName": "Prompt",
+        "purpose": "Prompt line and input; never below 16px so mobile does not zoom."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Suggested-command chips."
+      },
+      "status": {
+        "displayName": "Status",
+        "purpose": "Tmux status bar."
+      },
+      "ascii-logo": {
+        "displayName": "ASCII Logo",
+        "purpose": "Block-character GB mark in neofetch; the only text set large."
+      },
+      "ascii-logo-sm": {
+        "displayName": "ASCII Logo Small",
+        "purpose": "GB mark under 640px, neofetch stacked to one column."
+      }
     },
     "shadows": [],
     "motion": [
-      { "name": "ease", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "The only easing; all transitions and the obi reveal." },
-      { "name": "obi-slide-on", "value": "clip-path inset(0 0 100% 0) to inset(0), 0.9s", "purpose": "One-time obi entrance on load." },
-      { "name": "track-invert", "value": "background/color 0.3s", "purpose": "Track numeral inverts to a lemon block on hover or focus-within." },
-      { "name": "track-progress", "value": "transform scaleX(0 to 1) 1.4s, origin left", "purpose": "3px lemon progress bar on the active track; plays once, resets instantly." },
-      { "name": "obi-link-invert", "value": "background/color 0.25s", "purpose": "Obi contact buttons invert to ink." }
+      {
+        "name": "block-cursor-blink",
+        "value": "opacity 1.06s steps(1) infinite",
+        "purpose": "Amber block cursor blinks hard on/off; solid under prefers-reduced-motion."
+      },
+      {
+        "name": "boot-typing",
+        "value": "40ms per character",
+        "purpose": "On load the prompt types 'neofetch', then the output prints whole; skipped under prefers-reduced-motion."
+      }
     ],
     "breakpoints": [
-      { "name": "single-column", "value": "860px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "JetBrains Mono",
+        "source": "self-hosted woff2",
+        "display": "swap",
+        "subsets": [
+          "latin (preloaded)",
+          "latin-ext",
+          "box/block/arrow U+2190-21FF, U+2500-259F at 400 and 700"
+        ]
+      }
     ]
   },
   "components": [
     {
-      "name": "Obi Contact Button",
-      "kind": "button",
-      "refersTo": "obi-link",
-      "description": "Square ink-bordered contact stamp on the lemon obi; inverts to ink on hover and focus.",
-      "html": "<div class=\"ds-obi\"><a class=\"ds-obi-link\" href=\"#\">GitHub <svg viewBox=\"0 0 16 16\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M4 12 12 4M6 4h6v6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/></svg></a></div>",
-      "css": ".ds-obi { background: #e4f33b; padding: 24px; width: 240px; } .ds-obi-link { display: flex; justify-content: space-between; align-items: center; gap: 8px; text-decoration: none; color: #0c0f24; font: 700 .95rem/1 Archivo, sans-serif; padding: 11px 12px; border: 2px solid #0c0f24; transition: background .25s cubic-bezier(.16,1,.3,1), color .25s cubic-bezier(.16,1,.3,1); } .ds-obi-link:hover, .ds-obi-link:focus-visible { background: #0c0f24; color: #e4f33b; } .ds-obi-link:focus-visible { outline: 3px solid #0c0f24; outline-offset: 3px; }"
+      "name": "Prompt",
+      "kind": "input",
+      "refersTo": "prompt-input",
+      "description": "Live command line: bold green user@host, amber path, content-width input with hidden native caret and an amber block cursor; line set at max(16px, 1em).",
+      "html": "<form class=\"ds-prompt\"><label class=\"ds-ps1\" for=\"ds-cmd\">gabriela@la-serena<span class=\"ds-dim\">:</span><span class=\"ds-path\">~</span>$</label><input id=\"ds-cmd\" type=\"text\" value=\"cat akari\" style=\"--len:9\" spellcheck=\"false\"><span class=\"ds-cursor\" aria-hidden=\"true\"></span></form>",
+      "css": ".ds-prompt { display: flex; gap: 0 1ch; align-items: baseline; flex-wrap: wrap; background: #0b100d; padding: 12px 16px; font: 400 15px/1.6 \"JetBrains Mono\", ui-monospace, Consolas, monospace; font-variant-ligatures: none; font-size: max(16px, 1em); } .ds-ps1 { color: #4ee38a; font-weight: 700; } .ds-path { color: #ffb547; } .ds-dim { color: #7a9a85; } .ds-prompt input { flex: none; width: calc((var(--len, 0) + 1) * 1ch); max-width: 100%; font: inherit; color: #c4f2d0; background: transparent; border: 0; padding: 0; outline: none; caret-color: transparent; } .ds-cursor { display: inline-block; width: 1ch; height: 1.2em; margin-left: -2ch; align-self: center; background: #ffb547; animation: ds-blink 1.06s steps(1) infinite; pointer-events: none; } @keyframes ds-blink { 50% { opacity: 0; } } @media (prefers-reduced-motion: reduce) { .ds-cursor { animation: none; } }"
     },
     {
-      "name": "Track Row",
+      "name": "Inline Command",
       "kind": "custom",
-      "refersTo": "track-number",
-      "description": "Tracklist line with monumental numeral, title and description, side column; numeral inverts and a progress bar runs on hover/focus.",
-      "html": "<ol class=\"ds-tracks\"><li class=\"ds-track\" tabindex=\"0\"><div><h3>Akari</h3><p>Streaming de animación para Windows con caché persistente.</p></div><div class=\"ds-side\"><b>JavaScript</b>Escritorio<br><span class=\"ds-badge ds-badge-pub\">Repo público</span></div></li></ol>",
-      "css": ".ds-tracks { list-style: none; margin: 0; padding: 0 24px; counter-reset: t; background: #1b2fd0; color: #f5f7ff; font-family: 'Zen Kaku Gothic New', system-ui, sans-serif; } .ds-track { counter-increment: t; position: relative; display: grid; grid-template-columns: 5.4rem 1fr minmax(9rem, auto); gap: 6px 24px; align-items: start; padding: 22px 0 24px; border-bottom: 1px solid #6f7fe6; outline: none; } .ds-track::before { content: counter(t, decimal-leading-zero); font: 850 4.2rem/.82 Archivo, sans-serif; letter-spacing: -.04em; font-variant-numeric: tabular-nums; padding: 6px 4px 2px; justify-self: start; transition: background .3s cubic-bezier(.16,1,.3,1), color .3s cubic-bezier(.16,1,.3,1); } .ds-track::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: #e4f33b; transform: scaleX(0); transform-origin: left; } .ds-track:hover::before, .ds-track:focus-within::before, .ds-track:focus-visible::before { background: #e4f33b; color: #0c0f24; } .ds-track:hover::after, .ds-track:focus-within::after, .ds-track:focus-visible::after { transform: scaleX(1); transition: transform 1.4s cubic-bezier(.16,1,.3,1); } .ds-track h3 { margin: 4px 0 6px; font: 750 1.45rem/1.15 Archivo, sans-serif; letter-spacing: -.01em; } .ds-track p { margin: 0; max-width: 62ch; } .ds-side { text-align: right; padding-top: 6px; font: 600 .85rem/1.45 Archivo, sans-serif; letter-spacing: .04em; text-transform: uppercase; color: #c9d0ff; } .ds-side b { display: block; color: #f5f7ff; font-weight: 800; font-size: 1rem; letter-spacing: 0; text-transform: none; } .ds-badge { display: inline-block; margin-top: 8px; padding: 3px 8px; border: 1px solid #c9d0ff; } .ds-badge-pub { background: #e4f33b; color: #0c0f24; border-color: #e4f33b; }"
+      "refersTo": "inline-command",
+      "description": "Runnable command inside output; a boxless button that executes what it names.",
+      "html": "<p class=\"ds-out\">Bienvenida/o. Escribe <button type=\"button\" class=\"ds-run\">help</button> o elige un comando abajo.</p>",
+      "css": ".ds-out { margin: 0; background: #0b100d; color: #7a9a85; padding: 12px 16px; font: 400 15px/1.6 \"JetBrains Mono\", ui-monospace, Consolas, monospace; } .ds-run { font: inherit; color: #ffb547; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: color-mix(in srgb, #ffb547 45%, transparent); text-underline-offset: .2em; } .ds-run:hover { text-decoration-color: #ffb547; } .ds-run:focus-visible { outline: 2px solid #ffb547; outline-offset: 2px; }"
     },
     {
-      "name": "Private Badge",
+      "name": "Command Chip",
       "kind": "chip",
-      "refersTo": "badge",
-      "description": "Outlined uppercase status tag in the track side column.",
-      "html": "<div class=\"ds-ground\"><span class=\"ds-badge-priv\">Privado</span></div>",
-      "css": ".ds-ground { background: #1b2fd0; padding: 16px; } .ds-badge-priv { display: inline-block; padding: 3px 8px; border: 1px solid #c9d0ff; color: #c9d0ff; font: 600 .85rem/1.45 Archivo, sans-serif; letter-spacing: .04em; text-transform: uppercase; }"
+      "refersTo": "command-chip",
+      "description": "Suggested commands row above the status bar in fixed order help, contacto, ls, whoami, exp, estudios, clear; scrolls horizontally, never wraps.",
+      "html": "<nav class=\"ds-chips\"><span>prueba:</span><button type=\"button\">help</button><button type=\"button\">contacto</button><button type=\"button\">ls</button><button type=\"button\">whoami</button><button type=\"button\">exp</button><button type=\"button\">estudios</button><button type=\"button\">clear</button></nav>",
+      "css": ".ds-chips { display: flex; overflow-x: auto; scrollbar-width: none; gap: 8px; padding: 8px 16px; border-top: 1px solid #22332a; background: #0b100d; font-family: \"JetBrains Mono\", ui-monospace, Consolas, monospace; } .ds-chips span { color: #7a9a85; align-self: center; font-size: 15px; } .ds-chips button { font: inherit; font-size: 14px; color: #c4f2d0; background: #111a15; border: 1px solid #22332a; border-radius: 0; padding: 5px 12px; cursor: pointer; } .ds-chips button:hover { border-color: #ffb547; color: #ffb547; } .ds-chips button:focus-visible { outline: 2px solid #ffb547; outline-offset: 2px; }"
     },
     {
-      "name": "Public Badge",
-      "kind": "chip",
-      "refersTo": "badge-public",
-      "description": "Lemon-filled uppercase tag marking a linked public repository.",
-      "html": "<div class=\"ds-ground\"><span class=\"ds-badge-public\">Repo público</span></div>",
-      "css": ".ds-ground { background: #1b2fd0; padding: 16px; } .ds-badge-public { display: inline-block; padding: 3px 8px; background: #e4f33b; color: #0c0f24; border: 1px solid #e4f33b; font: 600 .85rem/1.45 Archivo, sans-serif; letter-spacing: .04em; text-transform: uppercase; }"
-    },
-    {
-      "name": "Disc Head",
+      "name": "Cat Frame",
       "kind": "custom",
-      "description": "Section head: headline with obi-lemon kana tag, uppercase count, closed by a 3px white rule.",
-      "html": "<div class=\"ds-disc-head\"><h2>Disc 1 · Proyectos<span class=\"ds-jp\" lang=\"ja\">収録曲</span></h2><p>10 pistas</p></div>",
-      "css": ".ds-disc-head { background: #1b2fd0; color: #f5f7ff; padding: 24px 24px 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-bottom: 3px solid #f5f7ff; } .ds-disc-head h2 { margin: 0; font: 800 2.4rem/1 Archivo, sans-serif; letter-spacing: -.02em; } .ds-jp { font: 900 max(1.15rem, .62em)/1 'Zen Kaku Gothic New', sans-serif; color: #e4f33b; margin-left: .45em; letter-spacing: .06em; } .ds-disc-head p { margin: 0; color: #c9d0ff; font: 600 .85rem/1.3 Archivo, sans-serif; letter-spacing: .06em; text-transform: uppercase; }"
+      "refersTo": "cat-frame",
+      "description": "Project detail printed by cat <proyecto>, framed with moss box-drawing glyphs on the bare screen; no panel.",
+      "html": "<div class=\"ds-cat\"><h2 class=\"ds-frame\">┌─&nbsp;<b>Akari</b>&nbsp;<span class=\"ds-hr\"></span></h2><div class=\"ds-body\"><p>Streaming de animación para Windows con caché persistente.</p><p class=\"ds-dim\">stack: <span>JavaScript · escritorio</span></p><p class=\"ds-dim\">repo: <a href=\"#\">github.com/GBarrera817/akari</a>  ·  <button class=\"ds-run\" type=\"button\">open akari</button></p></div><p class=\"ds-frame\">└<span class=\"ds-hr\"></span></p></div>",
+      "css": ".ds-cat { max-width: 72ch; background: #0b100d; color: #c4f2d0; padding: 12px 16px; font: 400 15px/1.6 \"JetBrains Mono\", ui-monospace, Consolas, monospace; font-variant-ligatures: none; } .ds-cat h2 { margin: 0; font-size: 1em; font-weight: 400; } .ds-cat p { margin: 0; } .ds-cat a { color: #ffb547; text-underline-offset: .2em; } .ds-frame { display: flex; white-space: nowrap; overflow: hidden; color: #7a9a85; } .ds-frame b { color: #ffb547; font-weight: 700; } .ds-hr { flex: 1; display: block; overflow: hidden; white-space: nowrap; } .ds-hr::after { content: \"────────────────────────────────────────────────────────────────────────────────\"; } .ds-body { padding: 6px 0 6px 2ch; } .ds-body p + p { margin-top: 6px; } .ds-dim { color: #7a9a85; } .ds-dim span { color: #c4f2d0; } .ds-run { font: inherit; color: #ffb547; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: color-mix(in srgb, #ffb547 45%, transparent); text-underline-offset: .2em; } .ds-run:hover { text-decoration-color: #ffb547; }"
     },
     {
-      "name": "Catalog Strip",
+      "name": "Tmux Status Bar",
       "kind": "nav",
-      "description": "Top-of-booklet printer's strip with registration marks and catalog text over a hairline.",
-      "html": "<div class=\"ds-reg\"><span><svg viewBox=\"0 0 20 20\" width=\"18\" height=\"18\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><circle cx=\"10\" cy=\"10\" r=\"5.5\"/><path d=\"M10 0v20M0 10h20\"/></g></svg><b>Portafolio</b> · 2 discos</span><span>Edición 2026</span></div>",
-      "css": ".ds-reg { background: #1b2fd0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; padding: 28px 24px 14px; border-bottom: 1px solid #6f7fe6; font: 600 .78rem/1.2 Archivo, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #c9d0ff; } .ds-reg span { display: inline-flex; align-items: center; gap: 10px; } .ds-reg svg { color: #f5f7ff; } .ds-reg b { color: #f5f7ff; font-weight: 800; }"
+      "refersTo": "tmux-status-bar",
+      "description": "Full-bleed green footer with session, window list, city and local time.",
+      "html": "<footer class=\"ds-tmux\"><span><b>[portafolio]</b> 0:zsh* 1:proyectos-</span><span>GBA · La Serena · 19 nov 14:05</span></footer>",
+      "css": ".ds-tmux { display: flex; justify-content: space-between; gap: 16px; background: #4ee38a; color: #0b100d; font: 400 13px/1 \"JetBrains Mono\", ui-monospace, Consolas, monospace; padding: 5px 16px; white-space: nowrap; overflow: hidden; } .ds-tmux b { font-weight: 700; }"
     },
     {
-      "name": "Credits Email",
+      "name": "Listing Rows",
       "kind": "custom",
-      "refersTo": "credits-panel",
-      "description": "Back-cover panel on ultra-deep with the email set as a lemon headline link.",
-      "html": "<div class=\"ds-credits\"><a class=\"ds-mail\" href=\"#\">nombre@ejemplo.com</a></div>",
-      "css": ".ds-credits { background: #1423a6; border-top: 3px solid #f5f7ff; padding: 40px 24px; } .ds-mail { font: 800 2.4rem/1.05 Archivo, sans-serif; letter-spacing: -.025em; color: #e4f33b; text-decoration: none; overflow-wrap: anywhere; } .ds-mail:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: .22em; } .ds-mail:focus-visible { outline: 3px solid #e4f33b; outline-offset: 3px; }"
+      "refersTo": "listing-header",
+      "description": "ls -l style table: dim uppercase column headers, visibility flag, runnable project id, moss stack column, closing ─ rule.",
+      "html": "<div class=\"ds-ls\"><div class=\"ds-rows\"><span class=\"ds-dim\">ACCESO</span><span class=\"ds-dim\">NOMBRE</span><span class=\"ds-dim\">STACK</span><span class=\"ds-grn\">público</span><span><button class=\"ds-run\" type=\"button\">akari/</button></span><span class=\"ds-dim\">JavaScript · escritorio</span><span class=\"ds-dim\">privado</span><span><button class=\"ds-run\" type=\"button\">paralela/</button></span><span class=\"ds-dim\">Kotlin · Android · Firebase</span></div><p class=\"ds-hr ds-dim\"></p></div>",
+      "css": ".ds-ls { background: #0b100d; color: #c4f2d0; padding: 12px 16px; font: 400 15px/1.6 \"JetBrains Mono\", ui-monospace, Consolas, monospace; font-variant-ligatures: none; } .ds-ls p { margin: 0; } .ds-rows { display: grid; grid-template-columns: max-content max-content 1fr; gap: 0 24px; } .ds-rows > * { white-space: nowrap; } .ds-grn { color: #4ee38a; } .ds-dim { color: #7a9a85; } .ds-hr { display: block; white-space: nowrap; overflow: hidden; } .ds-hr::after { content: \"────────────────────────────────────────────────────────────────────────────────\"; } .ds-run { font: inherit; color: #ffb547; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: color-mix(in srgb, #ffb547 45%, transparent); text-underline-offset: .2em; } .ds-run:hover { text-decoration-color: #ffb547; }"
     }
   ],
   "narrative": {
-    "northStar": "The First-Press Single",
-    "overview": "The site is a Japanese CD single in its physical edition. A lemon-yellow obi wraps the left edge of the sleeve; everything else is the booklet, printed edge to edge in saturated ultramarine with white ink. Content is not arranged as a landing page but as a release: the obi carries name, trade and contact; the booklet front carries the name at cover scale; the body is a tracklist split into discs (projects, experience), liner notes, and a back-cover credits panel.\n\nThe world is flat print. Depth comes only from paper changes (ultramarine booklet, deeper ultramarine back cover, yellow obi) and from fine printer's rules, catalog codes (GBA-2026) and registration marks. Latin display is a heavy wide grotesk (Archivo) the way Japanese pressings set alphabet titles; every kana and kanji is a 900-weight Japanese gothic. Track numbers are set monumentally, never as bullets.\n\nDensity is editorial: generous vertical rhythm between discs, tight internal rows, one long measure (62ch) for body copy. Motion is sparse and mechanical, like a player display: the obi slides on once, and a hovered or focused track inverts its number and runs a progress bar once.",
+    "northStar": "La sesión abierta",
+    "overview": "The whole site is one full-height terminal session on green-black. There is no landing page underneath it: no hero, no card grid, no navigation bar. Content exists only as the output of commands (`neofetch`, `ls`, `cat`, `exp`, `estudios`, `contacto`), appended to a scrolling log above a live prompt. The visitor reads by typing or by clicking command names that appear inside earlier output, exactly as a session's history accumulates.\n\nThe material is phosphor text on a near-black screen, quiet rather than cinematic. Green belongs to the system (prompt, status bar), amber marks anything the visitor can name or run and the cursor itself, red appears only when a command fails. One monospace family, two weights, almost one size: hierarchy comes from color and position in the log, not from scale. The single exception is the neofetch block logo, which is drawn large because it is a picture, not a heading. Depth is flat; structure inside output is drawn with box-drawing glyphs (`┌─`, `└─`, `─`), never with filled panels. The frame is fixed: scrolling screen, a row of suggested commands, and a tmux-style status bar pinned to the bottom with the session name and La Serena time.\n\nDensity is that of a real terminal: tight line rhythm (1.6), small fixed gaps between output blocks, tabular rows laid out like `ls -l`. Motion is terminal-native and short: an amber block cursor that blinks in hard steps, and on load the word `neofetch` typed into the prompt at 40ms per character before its output appears whole. Under reduced motion the cursor holds solid and the typing is skipped. There is no glow, no scanline, no animated output.",
     "keyCharacteristics": [
-      "Full-bleed ultramarine booklet with white ink; no white page anywhere.",
-      "Vertical lemon obi, full viewport height and sticky on desktop; a horizontal top band on mobile.",
-      "Tracklist rows: monumental numeral, title and note, right-aligned side column.",
-      "Printer's furniture as native ornament: hairline rules, registration marks, catalog codes, the 初回限定盤 sticker.",
-      "Square corners everywhere; zero shadows."
+      "One screen, one log, one prompt; every piece of content is command output.",
+      "JetBrains Mono everywhere (self-hosted, including box, block and arrow glyphs), ligatures off, weights 400 and 700 only.",
+      "Green = system, amber = nameable/runnable and the cursor, red = error, moss = metadata and drawn structure.",
+      "Square corners, box-glyph frames and rules, no filled cards, no shadows, no glow.",
+      "Tmux status bar as the page's only footer."
     ],
     "rules": [
-      { "name": "The Two Papers Rule", "body": "A surface is either ultramarine (booklet) or lemon (obi). Yellow fills on ultramarine are small and earned (an active track number, a public badge); never a yellow section on the booklet.", "section": "colors" },
-      { "name": "The Ink Pairing Rule", "body": "On ultramarine, text is paper, paper-2 or obi. On lemon, text is ink. Ink never appears on ultramarine except inside a yellow fill.", "section": "colors" },
-      { "name": "The Script Split Rule", "body": "Latin headings and numerals are Archivo; every kana/kanji is Obi Kana 900. Never set Japanese in Archivo or Latin display in the gothic.", "section": "typography" },
-      { "name": "The Monumental Numeral Rule", "body": "List ordinals are track numbers at display scale (4.2rem desktop), never small bullets or chips.", "section": "typography" },
-      { "name": "The Printed Matter Rule", "body": "Nothing floats. Hierarchy comes from paper color and rule weight, never shadow or blur.", "section": "elevation" }
+      {
+        "name": "The Red Means Failure Rule",
+        "body": "Error Red appears only on a failed or refused command. Never use it for emphasis, status, or decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Amber Is Clickable Rule",
+        "body": "If a word is amber inside output, it names something the visitor could type; runnable amber words are real buttons that execute that command. The block cursor is the one amber mark that is not a name: it is where the next name goes.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Size Rule",
+        "body": "Headings do not grow. A title is the body size in bold amber; hierarchy is color and log position, never scale. The ASCII logo is an image made of glyphs and is the only text set large.",
+        "section": "typography"
+      },
+      {
+        "name": "The Prompt Input Floor Rule",
+        "body": "The prompt line is never below 16px (`max(16px, 1em)`) so mobile browsers do not zoom on focus.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Glow Rule",
+        "body": "No text-shadow, box-shadow, bloom, or neon border. Phosphor is conveyed by color alone.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Glyphs Not Panels Rule",
+        "body": "Structure inside the log is drawn with characters a terminal could print (`┌─ name ───`, `└───`, `─`), in Moss Dim. Never a filled or bordered box.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "**Do** keep the booklet ultramarine (#1b2fd0) full-bleed with white-ink text; use ultra-deep only for the back-cover credits panel.",
-      "**Do** present any list of work as track rows with CSS-counter numerals at display scale and a right-hand side column.",
-      "**Do** use lemon (#e4f33b) as the single accent on ultramarine, and ink (#0c0f24) as the only text color on lemon.",
-      "**Do** set Latin display in Archivo 750-850 with negative tracking and every Japanese glyph in Obi Kana 900; add new kana only by regenerating the subset.",
-      "**Do** use printer's furniture (hairline rules, registration marks, catalog codes) as the ornament vocabulary.",
-      "**Do** keep every corner square and every surface flat.",
-      "**Do** honor `prefers-reduced-motion`: no obi reveal, no track transitions."
+      "**Do** deliver every new piece of content as the output of a command, echoed after the prompt.",
+      "**Do** make any project or command name that appears in output an Inline Command that runs it.",
+      "**Do** keep green for the system, amber for the nameable and the cursor, red for errors, moss for metadata and drawn structure.",
+      "**Do** group output with moss box-drawing glyphs and `─` rules, the way a CLI prints them.",
+      "**Do** use the global focus ring: 2px amber outline, 2px offset.",
+      "**Do** keep everything in JetBrains Mono at 400 or 700, ligatures off, with box and block glyphs from the self-hosted subset.",
+      "**Do** stop the cursor blink and skip the boot typing under reduced motion."
     ],
     "donts": [
-      "**Don't** add shadows, blur, gradients or rounded corners.",
-      "**Don't** use rule blue (#6f7fe6) for text; it is too low-contrast on ultramarine.",
-      "**Don't** place yellow sections or large yellow fills on the booklet; yellow on ultramarine stays small and stateful.",
-      "**Don't** turn tracks into equal cards or technology chips.",
-      "**Don't** use emoji or icon fonts; glyphs are inline SVG symbols in currentColor."
+      "**Don't** add a hero, a card grid, or a navigation bar; the session is the only interface.",
+      "**Don't** put output on filled or bordered panels; draw frames with glyphs.",
+      "**Don't** add glow, text-shadow, box-shadow, or bright/neon borders.",
+      "**Don't** round corners.",
+      "**Don't** enlarge headings; titles stay at body size. Only the ASCII logo is set large.",
+      "**Don't** animate output; only the prompt types, and only at boot.",
+      "**Don't** use Error Red for anything but failed commands."
     ]
   }
 }

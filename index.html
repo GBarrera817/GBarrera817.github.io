@@ -2,340 +2,384 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gabriela Barrera Ángel · Ingeniera en Computación</title>
-<meta name="description" content="Portafolio de Gabriela Barrera Ángel, Ingeniera en Computación en La Serena, Chile: proyectos, experiencia y contacto.">
-<meta name="theme-color" content="#1b2fd0">
-<link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+<title>gabriela@la-serena — portafolio</title>
+<meta name="description" content="Portafolio de Gabriela Barrera Ángel, Ingeniera en Computación en La Serena, Chile. Una terminal: escribe help.">
+<meta name="theme-color" content="#0b100d">
+<link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  @font-face { font-family: "Archivo"; font-weight: 100 900; font-display: swap;
-    src: url("assets/fonts/archivo-latin.woff2") format("woff2");
+  @font-face { font-family: "JetBrains Mono"; font-weight: 100 800; font-display: swap;
+    src: url("assets/fonts/jetbrains-mono-latin.woff2") format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-  @font-face { font-family: "Archivo"; font-weight: 100 900; font-display: swap;
-    src: url("assets/fonts/archivo-latin-ext.woff2") format("woff2");
+  @font-face { font-family: "JetBrains Mono"; font-weight: 100 800; font-display: swap;
+    src: url("assets/fonts/jetbrains-mono-latin-ext.woff2") format("woff2");
     unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+2C60-2C7F, U+A720-A7FF; }
-  @font-face { font-family: "Zen Kaku Gothic New"; font-weight: 400; font-display: swap;
-    src: url("assets/fonts/zen-kaku-gothic-new-400-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
-  @font-face { font-family: "Zen Kaku Gothic New"; font-weight: 400; font-display: swap;
-    src: url("assets/fonts/zen-kaku-gothic-new-400-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02FF; }
-  @font-face { font-family: "Zen Kaku Gothic New"; font-weight: 700; font-display: swap;
-    src: url("assets/fonts/zen-kaku-gothic-new-700-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
-  @font-face { font-family: "Zen Kaku Gothic New"; font-weight: 700; font-display: swap;
-    src: url("assets/fonts/zen-kaku-gothic-new-700-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02FF; }
-  /* Subconjunto con solo los kana/kanji usados en la página */
-  @font-face { font-family: "Obi Kana"; font-weight: 900; font-display: swap;
-    src: url("assets/fonts/zen-kaku-gothic-new-900-jp-subset.woff2") format("woff2"); }
+
+  /* Subconjunto con los caracteres de caja, bloques y flechas que usa la terminal */
+  @font-face { font-family: "JetBrains Mono"; font-weight: 400; font-display: swap;
+    src: url("assets/fonts/jetbrains-mono-400-box-subset.woff2") format("woff2"); unicode-range: U+2190-21FF, U+2500-259F; }
+  @font-face { font-family: "JetBrains Mono"; font-weight: 700; font-display: swap;
+    src: url("assets/fonts/jetbrains-mono-700-box-subset.woff2") format("woff2"); unicode-range: U+2190-21FF, U+2500-259F; }
 
   :root {
-    --ultra: #1b2fd0;      /* booklet impreso */
-    --ultra-deep: #1423a6;
-    --paper: #f5f7ff;      /* tinta blanca */
-    --paper-2: #c9d0ff;    /* texto secundario, teñido del azul */
-    --rule: #6f7fe6;
-    --obi: #e4f33b;        /* papel del obi */
-    --ink: #0c0f24;
-    --obi-w: clamp(220px, 23vw, 320px);
-    --display: "Archivo", "Obi Kana", sans-serif;
-    --text: "Zen Kaku Gothic New", "Obi Kana", system-ui, sans-serif;
-    --kana: "Obi Kana", "Archivo", sans-serif;
-    --ease: cubic-bezier(.16, 1, .3, 1);
+    --bg: #0b100d;
+    --bg-2: #111a15;
+    --fg: #c4f2d0;     /* texto de salida */
+    --green: #4ee38a;  /* prompt y barra tmux */
+    --dim: #7a9a85;    /* comentarios, metadatos */
+    --amber: #ffb547;  /* nombres y comandos resaltados */
+    --red: #ff7a6b;    /* solo errores */
+    --line: #22332a;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
     color-scheme: dark;
   }
   * { box-sizing: border-box; }
-  html { scrollbar-color: var(--obi) var(--ultra-deep); }
-  body { margin: 0; background: var(--ultra); color: var(--paper);
-    font: 400 1.05rem/1.65 var(--text); -webkit-font-smoothing: antialiased; }
-  ::selection { background: var(--obi); color: var(--ink); }
-  a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
-  :focus-visible { outline: 3px solid var(--obi); outline-offset: 3px; }
-  .obi :focus-visible { outline-color: var(--ink); }
-  .regmark { width: 18px; height: 18px; flex: none; color: var(--paper); vertical-align: middle; }
-  .reg span, .colophon span { display: inline-flex; align-items: center; gap: 10px; }
-  svg.i { width: .9em; height: .9em; vertical-align: -.05em; flex: none; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 400 15px/1.6 var(--mono);
+    font-variant-ligatures: none; display: flex; flex-direction: column; height: 100dvh; }
+  ::selection { background: var(--amber); color: var(--bg); }
+  a { color: var(--amber); text-underline-offset: .2em; }
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+  * { scrollbar-color: var(--line) var(--bg); scrollbar-width: thin; }
 
-  /* ---------- Obi ---------- */
-  .page { display: grid; grid-template-columns: var(--obi-w) 1fr; min-height: 100vh; }
-  .obi { position: sticky; top: 0; height: 100vh; background: var(--obi); color: var(--ink);
-    display: grid; grid-template-rows: auto 1fr auto auto; gap: 20px; padding: 28px 24px;
-    animation: slide-on .9s var(--ease) both; }
-  @keyframes slide-on { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
-  .obi-top { display: flex; justify-content: space-between; align-items: baseline;
-    font: 700 .78rem/1 var(--display); letter-spacing: .08em; text-transform: uppercase; }
-  .obi-mid { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; min-height: 0; overflow: hidden; }
-  .tate { writing-mode: vertical-rl; font: 900 min(4.6rem, 5.6vw, 5.4vh)/1 var(--kana); white-space: nowrap;
-    letter-spacing: .02em; margin: 0; }
-    .gentei { writing-mode: vertical-rl; background: var(--ink); color: var(--obi);
-    font: 900 1.05rem/1 var(--kana); padding: 10px 7px; letter-spacing: .12em; }
-  .catch { margin: 0; font: 800 1.25rem/1.3 var(--display); letter-spacing: -.01em; }
-  .catch span { display: block; font: 500 .92rem/1.45 var(--text); margin-top: 10px; letter-spacing: 0; }
-  .obi-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-  .obi-links a { display: flex; justify-content: space-between; align-items: center; gap: 8px;
-    text-decoration: none; font: 700 .95rem/1 var(--display); padding: 11px 12px;
-    border: 2px solid var(--ink); transition: background .25s var(--ease), color .25s var(--ease); }
-  .obi-links a:hover, .obi-links a:focus-visible { background: var(--ink); color: var(--obi); }
+  .screen { flex: 1; overflow-y: auto; padding: 20px clamp(16px, 3vw, 40px) 12px; cursor: text; }
+  .out { max-width: 980px; }
+  .block { margin: 0 0 14px; }
+  .cmdline { color: var(--fg); white-space: pre-wrap; word-break: break-word; font-size: max(16px, 1em); }
+  .ps1 { color: var(--green); font-weight: 700; }
+  .ps1 .path { color: var(--amber); }
+  .dim { color: var(--dim); }
+  .amb { color: var(--amber); }
+  .grn { color: var(--green); }
+  .err { color: var(--red); }
+  b { font-weight: 700; }
+  p { margin: 0; }
 
-  /* ---------- Booklet ---------- */
-  .booklet { min-width: 0; padding: 0 clamp(20px, 5vw, 72px); }
-  .reg { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px;
-    padding: 28px 0 14px; border-bottom: 1px solid var(--rule);
-    font: 600 .78rem/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--paper-2); }
-  .reg b { color: var(--paper); font-weight: 800; }
-  .cover { padding: clamp(40px, 9vh, 96px) 0 clamp(32px, 6vh, 64px); }
-  h1 { margin: 0; font: 850 clamp(3.1rem, 8.4vw, 6rem)/.9 var(--display); letter-spacing: -.035em; text-wrap: balance; }
-  h1 .ln2 { display: block; color: var(--obi); }
-  .role { margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 8px 28px;
-    font: 600 1.15rem/1.3 var(--display); }
-  .role span:last-child { color: var(--paper-2); font-weight: 500; }
+  /* comandos clicables dentro de la salida */
+  .run { font: inherit; color: var(--amber); background: none; border: 0; padding: 0; cursor: pointer;
+    text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--amber) 45%, transparent);
+    text-underline-offset: .2em; }
+  .run:hover { text-decoration-color: var(--amber); }
 
-  .disc { padding: 56px 0 24px; }
-  .disc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-    border-bottom: 3px solid var(--paper); padding-bottom: 12px; }
-  h2 { margin: 0; font: 800 clamp(1.9rem, 4vw, 2.8rem)/1 var(--display); letter-spacing: -.02em; }
-  h2 .jp { font: 900 max(1.15rem, .62em)/1 var(--kana); color: var(--obi); margin-left: .45em; letter-spacing: .06em; }
-  .disc-head p { margin: 0; color: var(--paper-2); font: 600 .85rem/1.3 var(--display);
-    letter-spacing: .06em; text-transform: uppercase; }
+  /* neofetch */
+  .fetch { display: grid; grid-template-columns: auto 1fr; gap: 6px 32px; align-items: start; }
+  .logo { margin: 0; color: var(--amber); font-weight: 700; font-size: 40px; line-height: 1;
+    text-shadow: 1px 0 0 currentColor, -1px 0 0 currentColor; } /* une las celdas █, sin profundidad */
+  .info .host { color: var(--green); font-weight: 700; }
+  .info .rule { color: var(--dim); }
+  .info .k { color: var(--amber); font-weight: 700; }
+  .swatch { display: flex; gap: 0; margin-top: 10px; }
+  .swatch span { width: 26px; height: 14px; }
 
-  .tracks { list-style: none; margin: 0; padding: 0; counter-reset: t; }
-  .track { counter-increment: t; position: relative; display: grid;
-    grid-template-columns: 5.4rem 1fr minmax(9rem, auto); gap: 6px 24px; align-items: start;
-    padding: 22px 0 24px; border-bottom: 1px solid var(--rule); }
-  .track::before { content: counter(t, decimal-leading-zero); font: 850 4.2rem/.82 var(--display);
-    letter-spacing: -.04em; font-variant-numeric: tabular-nums; padding: 6px 4px 2px;
-    transition: background .3s var(--ease), color .3s var(--ease); justify-self: start; }
-  .track::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px;
-    background: var(--obi); transform: scaleX(0); transform-origin: left; }
-  .track:hover::before, .track:focus-within::before { background: var(--obi); color: var(--ink); }
-  .track:hover::after, .track:focus-within::after { transform: scaleX(1); transition: transform 1.4s var(--ease); }
-  .track h3 { margin: 4px 0 6px; font: 750 1.45rem/1.15 var(--display); letter-spacing: -.01em; }
-  .track h3 a { text-decoration: none; display: inline-flex; align-items: baseline; gap: .35em; }
-  .track h3 a:hover { text-decoration: underline; }
-  .track p { margin: 0; max-width: 62ch; color: var(--paper); }
-  .track .note { margin-top: 6px; color: var(--paper-2); font-size: .95rem; }
-  .side { text-align: right; padding-top: 6px; font: 600 .85rem/1.45 var(--display);
-    letter-spacing: .04em; text-transform: uppercase; color: var(--paper-2); }
-  .side b { display: block; color: var(--paper); font-weight: 800; font-size: 1rem; letter-spacing: 0;
-    text-transform: none; font-variant-numeric: tabular-nums; }
-  .badge { display: inline-block; margin-top: 8px; padding: 3px 8px; border: 1px solid var(--paper-2); }
-  .badge.pub { background: var(--obi); color: var(--ink); border-color: var(--obi); }
+  /* tablas tipo ls -l */
+  .rows { display: grid; grid-template-columns: max-content max-content 1fr; gap: 0 24px; }
+  .rows > * { white-space: nowrap; }
+  .rows .wrap { white-space: normal; }
+  .help { grid-template-columns: max-content 1fr; }
 
-  /* ---------- Notas del booklet ---------- */
-  .notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0;
-    border-bottom: 1px solid var(--rule); }
-  .notes > div { padding: 26px 24px 30px 0; }
-  .notes > div + div { padding-left: 24px; border-left: 1px solid var(--rule); }
-  .notes h3 { margin: 0 0 10px; font: 800 .82rem/1.2 var(--display); letter-spacing: .1em;
-    text-transform: uppercase; color: var(--obi); }
-  .notes p { margin: 0; }
-  .notes .dim { color: var(--paper-2); }
-  .skills { margin: 22px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4px 0;
-    font: 700 1.1rem/1.5 var(--display); }
-  .skills li:not(:last-child)::after { content: "/"; color: var(--rule); margin: 0 .55em; }
+  .card { max-width: 72ch; }
+  .card h2 { margin: 0; font-size: 1em; font-weight: 400; }
+  .card .body { padding: 6px 0 6px 2ch; }
+  .card .body p + p { margin-top: 6px; }
+  .frame, .hr { display: block; white-space: nowrap; overflow: hidden; color: var(--dim); }
+  .frame { display: flex; }
+  .frame .hr { flex: 1; }
+  .frame b { color: var(--amber); }
+  .hr::after { content: "────────────────────────────────────────────────────────────────────────────────────────────────────────"; }
+  .rows .th { color: var(--dim); }
 
-  /* ---------- Créditos ---------- */
-  .credits { margin: 72px calc(-1 * clamp(20px, 5vw, 72px)) 0; padding: 64px clamp(20px, 5vw, 72px) 40px;
-    background: var(--ultra-deep); border-top: 3px solid var(--paper); }
-  .credits h2 { color: var(--paper); }
-  .mail { display: inline-block; margin: 28px 0 8px; font: 800 clamp(1.5rem, 4.6vw, 3.4rem)/1.05 var(--display);
-    letter-spacing: -.025em; color: var(--obi); text-decoration: none; overflow-wrap: anywhere; }
-  .mail:hover { text-decoration: underline; text-decoration-thickness: 3px; }
-  .credit-links { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 18px 0 56px; padding: 0; list-style: none;
-    font: 700 1.1rem/1.2 var(--display); }
-  .credit-links a { display: inline-flex; gap: .4em; align-items: baseline; }
-  .colophon { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
-    border-top: 1px solid var(--rule); padding-top: 16px; color: var(--paper-2);
-    font: 600 .78rem/1.3 var(--display); letter-spacing: .08em; text-transform: uppercase; }
+  .prompt { display: flex; gap: 0 1ch; align-items: baseline; flex-wrap: wrap; font-size: max(16px, 1em); }
+  .prompt input { flex: none; width: calc((var(--len, 0) + 1) * 1ch); max-width: 100%; font: inherit; color: var(--fg);
+    background: transparent; border: 0; padding: 0; outline: none; caret-color: transparent; }
+  .cursor { display: inline-block; width: 1ch; height: 1.2em; margin-left: -2ch; align-self: center;
+    background: var(--amber); animation: blink 1.06s steps(1) infinite; pointer-events: none; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .prompt input:disabled { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
 
-  /* ---------- Responsive ---------- */
-  @media (max-width: 860px) {
-    .page { grid-template-columns: 1fr; }
-    .obi { position: relative; height: auto; grid-template-rows: auto; gap: 12px; padding: 16px 16px 18px; }
-    .catch span { display: none; }
-    .cover { padding: 28px 0 8px; }
-    .disc { padding-top: 32px; }
-    .reg { padding-top: 16px; }
-    .obi-mid { flex-direction: column; gap: 10px; }
-    .tate { writing-mode: horizontal-tb; font-size: clamp(1.6rem, 8.2vw, 3.4rem); }
-    .gentei { writing-mode: horizontal-tb; padding: 6px 10px; }
-    .obi-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .obi-links a { justify-content: center; padding: 11px 6px; font-size: .88rem; }
-    .booklet { padding: 0 16px; }
-    .credits { margin-inline: -16px; padding-inline: 16px; }
-    .track { grid-template-columns: 3.6rem 1fr; }
-    .track::before { font-size: 2.8rem; }
-    .side { grid-column: 2; text-align: left; padding-top: 0; }
-    .side b { display: inline; margin-right: .6em; }
-    .notes { grid-template-columns: 1fr; }
-    .notes > div, .notes > div + div { padding: 22px 0; border-left: 0; }
-    .notes > div + div { border-top: 1px solid var(--rule); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .obi { animation: none; }
-    .track::after, .track::before, .obi-links a { transition: none !important; }
+  /* fila de comandos sugeridos */
+  .chips { display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(16px, 3vw, 40px);
+    border-top: 1px solid var(--line); background: var(--bg); scrollbar-width: none; }
+  .chips span { color: var(--dim); align-self: center; white-space: nowrap; }
+  .chips button { flex: none; font: inherit; font-size: 14px; color: var(--fg); background: var(--bg-2);
+    border: 1px solid var(--line); padding: 5px 12px; cursor: pointer; }
+  .chips button:hover { border-color: var(--amber); color: var(--amber); }
+
+  /* barra de estado tmux */
+  .tmux { display: flex; justify-content: space-between; gap: 16px; background: var(--green); color: var(--bg);
+    font-size: 13px; line-height: 1; padding: 5px clamp(16px, 3vw, 40px); white-space: nowrap; overflow: hidden; }
+  .tmux .win { font-weight: 700; }
+
+  noscript .card { margin: 20px; border: 1px solid var(--line); padding: 12px 16px; }
+
+  @media (max-width: 640px) {
+    body { font-size: 14px; }
+    .fetch { grid-template-columns: 1fr; }
+    .logo { font-size: 15px; line-height: 1; }
+    .rows { grid-template-columns: max-content 1fr; }
+    .rows .hide-sm { display: none; }
+    .tmux .hide-sm { display: none; }
   }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="reg" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="10" cy="10" r="5.5"/><path d="M10 0v20M0 10h20"/></g></symbol>
-  <symbol id="arr" viewBox="0 0 16 16"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></symbol>
-</svg>
-
-<div class="page">
-  <aside class="obi" aria-label="Presentación y contacto">
-    <div class="obi-top"><span>GBA-2026</span><span>La Serena · CL</span></div>
-    <div class="obi-mid">
-      <p class="tate" lang="ja" aria-hidden="true">ガブリエラ・バレーラ</p>
-      <span class="gentei" lang="ja" aria-hidden="true">初回限定盤</span>
+<main class="screen" id="screen" aria-label="Terminal del portafolio">
+  <noscript>
+    <div class="card">
+      <h2>Gabriela Barrera Ángel — Ingeniera en Computación</h2>
+      <p>Este portafolio es una terminal y necesita JavaScript.</p>
+      <p>Contacto: <a href="mailto:g.barrera.angel@gmail.com">g.barrera.angel@gmail.com</a> ·
+        <a href="https://www.linkedin.com/in/gabriela-barrera-angel">LinkedIn</a> ·
+        <a href="https://github.com/GBarrera817">GitHub</a></p>
     </div>
-    <p class="catch">Sistemas de hospital y apps propias.
-          <span>Ingeniera en Computación. Mantiene el ERP de un hospital público y construye sus propias apps para Android, Windows y la terminal.</span></p>
-    <ul class="obi-links">
-      <li><a href="mailto:g.barrera.angel@gmail.com">Email <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></li>
-      <li><a href="https://www.linkedin.com/in/gabriela-barrera-angel">LinkedIn <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></li>
-      <li><a href="https://github.com/GBarrera817">GitHub <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></li>
-    </ul>
-  </aside>
+  </noscript>
+  <div class="out" id="out" role="log" aria-live="polite"></div>
+  <form class="prompt" id="prompt" autocomplete="off">
+    <label class="ps1" for="cmd">gabriela@la-serena<span class="dim">:</span><span class="path">~</span>$<span class="sr"> Escribe un comando (help para ver la lista)</span></label>
+    <input id="cmd" name="cmd" type="text" spellcheck="false" autocapitalize="off" autocorrect="off"
+      enterkeyhint="go"><span class="cursor" aria-hidden="true"></span>
+  </form>
+</main>
 
-  <main class="booklet">
-    <div class="reg"><span><svg class="regmark" aria-hidden="true"><use href="#reg"/></svg><b>Portafolio</b> · 2 discos</span><span>Edición 2026<svg class="regmark" aria-hidden="true"><use href="#reg"/></svg></span></div>
+<nav class="chips" aria-label="Comandos sugeridos">
+  <span>prueba:</span>
+  <button type="button" data-cmd="help">help</button>
+  <button type="button" data-cmd="contacto">contacto</button>
+  <button type="button" data-cmd="ls">ls</button>
+  <button type="button" data-cmd="whoami">whoami</button>
+  <button type="button" data-cmd="exp">exp</button>
+  <button type="button" data-cmd="estudios">estudios</button>
+  <button type="button" data-cmd="clear">clear</button>
+</nav>
 
-    <header class="cover">
-      <h1>Gabriela <span class="ln2">Barrera Ángel</span></h1>
-      <p class="role"><span>Ingeniera en Computación</span><span>La Serena, Región de Coquimbo, Chile</span></p>
-    </header>
+<footer class="tmux" aria-hidden="true">
+  <span><span class="win">[portafolio]</span> 0:zsh*<span class="hide-sm"> 1:proyectos-</span></span>
+  <span><span class="hide-sm">GBA · La Serena · </span><span id="clock"></span></span>
+</footer>
 
-    <section class="disc" aria-labelledby="d1">
-      <div class="disc-head">
-        <h2 id="d1">Disc 1 · Proyectos<span class="jp" lang="ja">収録曲</span></h2>
-        <p>10 pistas</p>
-      </div>
-      <ol class="tracks">
-        <li class="track">
-          <div><h3><a href="https://github.com/GBarrera817/akari">Akari <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></h3>
-            <p>Streaming de animación para Windows con caché persistente, modo sin conexión y respaldos.</p></div>
-          <div class="side"><b>JavaScript</b>Escritorio<br><span class="badge pub">Repo público</span></div>
-        </li>
-        <li class="track">
-          <div><h3>Paralela</h3>
-            <p>Calendario menstrual y de anticonceptivos para parejas de mujeres lesbianas y bisexuales.</p></div>
-          <div class="side"><b>Kotlin</b>Android · Firebase<br><span class="badge">Privado</span></div>
-        </li>
-        <li class="track">
-          <div><h3>cmus-win</h3>
-            <p>Reproductor de música de terminal nativo para Windows, con letras sincronizadas y romaji.</p></div>
-          <div class="side"><b>C#</b>Terminal<br><span class="badge">Privado</span></div>
-        </li>
-        <li class="track">
-          <div><h3>Rea</h3>
-            <p>Descargador de video y audio basado en yt-dlp para escritorio, Windows 7 y Android.</p></div>
-          <div class="side"><b>Kotlin</b>Android · Escritorio<br><span class="badge">Privado</span></div>
-        </li>
-        <li class="track">
-          <div><h3>Versada</h3>
-            <p>App para visualizar letras de canciones en tiempo real.</p></div>
-          <div class="side"><b>Kotlin</b>Android<br><span class="badge">Privado</span></div>
-        </li>
-        <li class="track">
-          <div><h3>Registro de Redes</h3>
-            <p>Registro de usuarios, redes y reuniones con alertas y sincronización vía Google Sheets.</p></div>
-          <div class="side"><b>JavaScript</b>Web · Google Sheets<br><span class="badge">Privado</span></div>
-        </li>
-        <li class="track">
-          <div><h3><a href="https://github.com/GBarrera817/ManoOpenCV">ManoOpenCV <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></h3>
-            <p>Mano robótica controlada mediante visión por computador.</p></div>
-          <div class="side"><b>OpenCV</b>Robótica<br><span class="badge pub">Repo público</span></div>
-        </li>
-        <li class="track">
-          <div><h3><a href="https://github.com/GBarrera817/productos-api">productos-api <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></h3>
-            <p>API REST de estudio construida con Spring Boot.</p></div>
-          <div class="side"><b>Java</b>Spring Boot<br><span class="badge pub">Repo público</span></div>
-        </li>
-        <li class="track">
-          <div><h3><a href="https://github.com/GBarrera817/dashboard_gastos">Dashboard de gastos <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></h3>
-            <p>App para llevar el control de los gastos del mes.</p></div>
-          <div class="side"><b>JavaScript</b>Web<br><span class="badge pub">Repo público</span></div>
-        </li>
-        <li class="track">
-          <div><h3><a href="https://github.com/GBarrera817/JProlog_Viajes">JProlog Viajes <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></h3>
-            <p>Mini sistema experto con Prolog y Java.</p></div>
-          <div class="side"><b>Java</b>Prolog<br><span class="badge pub">Repo público</span></div>
-        </li>
-      </ol>
-    </section>
+<script>
+const GH = 'https://github.com/GBarrera817/';
+const PROJECTS = [
+  { id: 'akari', name: 'Akari', stack: 'JavaScript · escritorio', repo: GH + 'akari',
+    desc: 'Streaming de animación para Windows con caché persistente, modo sin conexión y respaldos.' },
+  { id: 'paralela', name: 'Paralela', stack: 'Kotlin · Android · Firebase',
+    desc: 'Calendario menstrual y de anticonceptivos para parejas de mujeres lesbianas y bisexuales.' },
+  { id: 'cmus-win', name: 'cmus-win', stack: 'C# · terminal',
+    desc: 'Reproductor de música de terminal nativo para Windows, con letras sincronizadas y romaji.' },
+  { id: 'rea', name: 'Rea', stack: 'Kotlin · Android · escritorio',
+    desc: 'Descargador de video y audio basado en yt-dlp para escritorio, Windows 7 y Android.' },
+  { id: 'versada', name: 'Versada', stack: 'Kotlin · Android',
+    desc: 'App para visualizar letras de canciones en tiempo real.' },
+  { id: 'registro-redes', name: 'Registro de Redes', stack: 'JavaScript · Google Sheets',
+    desc: 'Registro de usuarios, redes y reuniones con alertas y sincronización vía Google Sheets.' },
+  { id: 'manoopencv', name: 'ManoOpenCV', stack: 'OpenCV · robótica', repo: GH + 'ManoOpenCV',
+    desc: 'Mano robótica controlada mediante visión por computador.' },
+  { id: 'productos-api', name: 'productos-api', stack: 'Java · Spring Boot', repo: GH + 'productos-api',
+    desc: 'API REST de estudio construida con Spring Boot.' },
+  { id: 'dashboard-gastos', name: 'Dashboard de gastos', stack: 'JavaScript', repo: GH + 'dashboard_gastos',
+    desc: 'App para llevar el control de los gastos del mes.' },
+  { id: 'jprolog-viajes', name: 'JProlog Viajes', stack: 'Java · Prolog', repo: GH + 'JProlog_Viajes',
+    desc: 'Mini sistema experto con Prolog y Java.' },
+];
+const EXP = [
+  ['2023 — hoy', 'Ingeniera de software', 'Hospital San Juan de Dios, La Serena',
+    'Mantenimiento y actualización de los sistemas propios del hospital (C#) y del ERP Adhara, construido en GeneXus.'],
+  ['2021 — 2022', 'Back End Developer', 'RAM+, Santiago',
+    'ERP para la gestión y construcción de activos: Django en el backend, JavaScript vanilla en el frontend.'],
+  ['2020 — 2021', 'Desarrolladora Django', 'Delaporte Digital, Santiago', ''],
+  ['2020 — 2021', 'Python Developer', 'Laboratorio ALGES, Universidad de Chile',
+    'Script que automatiza el empaquetamiento y versionamiento del software geoestadístico Andes.'],
+  ['2020 — 2021', 'Python Developer', 'CRT Ltda., Santiago',
+    'Cruce de archivos Transbank (crédito y débito) con Bsale para la conciliación bancaria.'],
+];
+const LINKS = {
+  email: ['g.barrera.angel@gmail.com', 'mailto:g.barrera.angel@gmail.com'],
+  linkedin: ['linkedin.com/in/gabriela-barrera-angel', 'https://www.linkedin.com/in/gabriela-barrera-angel'],
+  github: ['github.com/GBarrera817', 'https://github.com/GBarrera817'],
+};
 
-    <section class="disc" aria-labelledby="d2">
-      <div class="disc-head">
-        <h2 id="d2">Disc 2 · Experiencia<span class="jp" lang="ja">経歴</span></h2>
-        <p>2020 — hoy</p>
-      </div>
-      <ol class="tracks">
-        <li class="track">
-          <div><h3>Ingeniera de software · Hospital San Juan de Dios</h3>
-            <p>Mantenimiento y actualización de los sistemas informáticos propios del hospital, implementados en C#.</p>
-            <p class="note">Mantenimiento de Adhara, ERP desarrollado especialmente para el Hospital de La Serena, construido en GeneXus.</p></div>
-          <div class="side"><b>2023 — hoy</b>La Serena<br>C# · GeneXus</div>
-        </li>
-        <li class="track">
-          <div><h3>Back End Developer · RAM+</h3>
-            <p>Implementación de un ERP para la gestión y construcción de activos de la empresa, con Django en el backend y JavaScript vanilla en el frontend.</p></div>
-          <div class="side"><b>2021 — 2022</b>Santiago<br>Django · JS</div>
-        </li>
-        <li class="track">
-          <div><h3>Desarrolladora Django · Delaporte Digital</h3>
-            </div>
-          <div class="side"><b>2020 — 2021</b>Santiago<br>Django</div>
-        </li>
-        <li class="track">
-          <div><h3>Python Developer · Laboratorio ALGES, Universidad de Chile</h3>
-            <p>Script para automatizar el empaquetamiento y versionamiento para el usuario final del software geoestadístico Andes.</p></div>
-          <div class="side"><b>2020 — 2021</b>Santiago<br>Python</div>
-        </li>
-        <li class="track">
-          <div><h3>Python Developer · CRT Ltda.</h3>
-            <p>Herramienta de cruce de datos entre archivos Transbank (pagos de crédito y débito) y la plataforma Bsale para la conciliación bancaria de la empresa.</p></div>
-          <div class="side"><b>2020 — 2021</b>Santiago<br>Python</div>
-        </li>
-      </ol>
-    </section>
+const $ = (s) => document.querySelector(s);
+const out = $('#out'), input = $('#cmd'), screen = $('#screen');
 
-    <section class="disc" aria-labelledby="d3">
-      <div class="disc-head">
-        <h2 id="d3">Notas<span class="jp" lang="ja">解説</span></h2>
-      </div>
-      <div class="notes">
-        <div>
-          <h3>Formación</h3>
-          <p>Ingeniería en Computación y Licenciatura en Ciencias de la Computación</p>
-          <p class="dim">Universidad de La Serena · 2012 — 2018</p>
-        </div>
-        <div>
-          <h3>Certificaciones</h3>
-          <p>Fundamentos en Ciberseguridad</p>
-          <p>Claude 101 <span class="dim">(certificado de finalización)</span></p>
-        </div>
-        <div>
-          <h3>Idiomas</h3>
-          <p>Español <span class="dim">nativo</span></p>
-          <p>Inglés <span class="dim">profesional</span></p>
-          <p>Japonés <span class="dim">básico</span></p>
-        </div>
-      </div>
-      <ul class="skills" aria-label="Aptitudes">
-        <li>Inteligencia artificial</li><li>Arquitectura de seguridad</li><li>GeneXus</li><li>C#</li>
-        <li>Python</li><li>Django</li><li>JavaScript</li><li>Kotlin</li><li>Java</li>
-      </ul>
-    </section>
+// h(tag, attrs, ...children): crea nodos sin innerHTML, así la entrada del usuario nunca se interpreta como HTML
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null) continue;
+    if (k === 'class') el.className = v; else if (k === 'onclick') el.onclick = v; else el.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k != null && k !== false && k !== '') el.append(k);
+  return el;
+}
+const span = (cls, txt) => h('span', { class: cls }, txt);
+const runBtn = (cmd, label) => h('button', { class: 'run', type: 'button', onclick: () => exec(cmd) }, label || cmd);
+const ext = (href, label) => h('a', { href, target: href.startsWith('mailto') ? null : '_blank', rel: 'noopener' }, label);
+function print(...nodes) { out.append(h('div', { class: 'block' }, ...nodes)); }
+function echo(cmd) {
+  out.append(h('div', { class: 'cmdline' },
+    h('span', { class: 'ps1' }, 'gabriela@la-serena', span('dim', ':'), span('path', '~'), '$'), ' ', cmd));
+}
+const findProject = (q) => PROJECTS.find(p => p.id === q.toLowerCase());
 
-    <footer class="credits" aria-labelledby="d4">
-      <h2 id="d4">Créditos<span class="jp" lang="ja">連絡先</span></h2>
-      <a class="mail" href="mailto:g.barrera.angel@gmail.com">g.barrera.angel@gmail.com</a>
-      <ul class="credit-links">
-        <li><a href="https://www.linkedin.com/in/gabriela-barrera-angel">LinkedIn <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></li>
-        <li><a href="https://github.com/GBarrera817">GitHub <svg class="i" aria-hidden="true"><use href="#arr"/></svg></a></li>
-      </ul>
-      <div class="colophon"><span><svg class="regmark" aria-hidden="true"><use href="#reg"/></svg>© 2026 Gabriela Barrera Ángel</span><span>GBA-2026 · Hecho en La Serena<svg class="regmark" aria-hidden="true"><use href="#reg"/></svg></span></div>
-    </footer>
-  </main>
-</div>
+const COMMANDS = {
+  help: ['muestra esta ayuda', () => print(
+    h('div', { class: 'rows help' },
+      ...[['whoami', 'quién soy'], ['neofetch', 'resumen del sistema (o sea, de mí)'], ['ls', 'lista mis proyectos'],
+          ['cat <proyecto>', 'detalle de un proyecto'], ['open <proyecto>', 'abre el repositorio (si es público)'],
+          ['exp', 'experiencia laboral'], ['estudios', 'formación, certificaciones e idiomas'],
+          ['contacto', 'email, LinkedIn y GitHub'], ['open email|linkedin|github', 'abre ese contacto'],
+          ['clear', 'limpia la pantalla']]
+        .flatMap(([c, d]) => [span('amb', c), span('dim wrap', d)])),
+    h('p', { class: 'dim' }, ' '),
+    h('p', { class: 'dim' }, 'Tab autocompleta · ↑/↓ recorren el historial'))],
+  whoami: ['quién soy', () => print(
+    h('p', {}, h('b', {}, 'Gabriela Barrera Ángel'), ' — Ingeniera en Computación, La Serena, Chile.'),
+    h('p', { class: 'dim' }, 'Mantengo los sistemas propios del Hospital San Juan de Dios (C#) y su ERP Adhara (GeneXus).'),
+    h('p', { class: 'dim' }, 'En paralelo construyo mis propias apps para Android, Windows y la terminal. Escribe ', runBtn('ls'), '.'))],
+  neofetch: ['resumen', () => neofetch()],
+  ls: ['proyectos', () => print(
+    h('p', { class: 'dim' }, `total ${PROJECTS.length}`),
+    h('div', { class: 'rows' }, span('th', 'ACCESO'), span('th', 'NOMBRE'), span('th hide-sm', 'STACK'),
+      ...PROJECTS.flatMap(p => [
+      span(p.repo ? 'grn' : 'dim', p.repo ? 'público' : 'privado'),
+      h('span', {}, runBtn('cat ' + p.id, p.id + '/')),
+      span('dim hide-sm', p.stack)])),
+    h('p', { class: 'hr' }),
+    h('p', { class: 'dim' }, ' '),
+    h('p', { class: 'dim' }, 'clic en un nombre, o escribe cat <proyecto>'))],
+  cat: ['detalle', (arg) => {
+    if (!arg) return print(span('err', 'cat: falta el nombre del proyecto. Prueba: '), runBtn('ls'));
+    const p = findProject(arg);
+    if (!p) return print(span('err', `cat: ${arg}: no existe ese proyecto. `), runBtn('ls'));
+    print(h('div', { class: 'card' },
+      h('h2', { class: 'frame' }, '┌─\u00a0', h('b', {}, p.name), '\u00a0', span('hr', '')),
+      h('div', { class: 'body' },
+        h('p', {}, p.desc),
+        h('p', { class: 'dim' }, 'stack: ', span('', p.stack)),
+        p.repo ? h('p', { class: 'dim' }, 'repo: ', ext(p.repo, p.repo.replace('https://', '')), '  ·  ', runBtn('open ' + p.id))
+               : h('p', { class: 'dim' }, 'repo: privado — el código no está publicado.')),
+      h('p', { class: 'frame' }, '└', span('hr', ''))));
+  }],
+  open: ['abrir', (arg) => {
+    if (!arg) return print(span('err', 'open: ¿qué abro? Ej.: open akari, open github'));
+    const link = LINKS[arg.toLowerCase()];
+    if (link) {
+      if (link[1].startsWith('mailto')) location.href = link[1]; else window.open(link[1], '_blank', 'noopener');
+      return print(h('p', { class: 'dim' }, 'abriendo ', ext(link[1], link[0]), ' …'));
+    }
+    const p = findProject(arg);
+    if (!p) return print(span('err', `open: ${arg}: no existe. `), runBtn('ls'));
+    if (!p.repo) return print(span('err', `open: ${p.id}: repositorio privado. `), runBtn('cat ' + p.id, 'ver detalle'));
+    window.open(p.repo, '_blank', 'noopener');
+    print(h('p', { class: 'dim' }, 'abriendo ', ext(p.repo, p.repo.replace('https://', '')), ' …'));
+  }],
+  exp: ['experiencia', () => print(h('p', { class: 'hr' }), ...EXP.map(([when, role, where, what]) => h('div', { class: 'block' },
+    h('p', {}, span('amb', when), ' ', h('b', {}, role), span('dim', ' @ ' + where)),
+    what && h('p', { class: 'dim' }, what))))],
+  estudios: ['formación', () => print(h('p', { class: 'hr' }),
+    h('div', { class: 'rows help' },
+      span('amb', 'formación'), h('span', { class: 'wrap' }, 'Ingeniería en Computación y Licenciatura en Ciencias de la Computación ', span('dim', '· Universidad de La Serena · 2012 — 2018')),
+      span('amb', 'certificados'), span('wrap', 'Fundamentos en Ciberseguridad · Claude 101'),
+      span('amb', 'idiomas'), span('wrap', 'español (nativo) · inglés (profesional) · japonés (básico)'),
+      span('amb', 'aptitudes'), span('wrap', 'IA · arquitectura de seguridad · GeneXus · C# · Python · Django · JavaScript · Kotlin · Java')))],
+  contacto: ['contacto', () => print(
+    h('div', { class: 'rows help' }, ...Object.entries(LINKS).flatMap(([k, [label, href]]) =>
+      [span('amb', k), h('span', { class: 'wrap' }, ext(href, label))])))],
+  clear: ['limpiar', () => { out.textContent = ''; }],
+  sudo: [null, () => print(span('err', 'gabriela no está en el archivo sudoers. Este incidente será reportado. ;)'))],
+};
+const ALIASES = { proyectos: 'ls', projects: 'ls', experiencia: 'exp', contact: 'contacto', '?': 'help', ayuda: 'help' };
+
+const history = []; let hIdx = 0;
+function exec(raw) {
+  const line = raw.trim();
+  echo(line);
+  if (line) { history.push(line); hIdx = history.length; }
+  const [name0, ...rest] = line.split(/\s+/);
+  const name = ALIASES[name0?.toLowerCase()] || name0?.toLowerCase();
+  if (name && Object.hasOwn(COMMANDS, name)) COMMANDS[name][1](rest.join(' '));
+  else if (name) print(span('err', `${name0}: comando no encontrado. Escribe `), runBtn('help'));
+  input.value = ''; syncLen();
+  screen.scrollTop = screen.scrollHeight;
+  if (matchMedia('(hover: hover)').matches) input.focus();
+}
+
+function neofetch() {
+  const logo = [
+    ' ████   ████  ',
+    '█       █   █ ',
+    '█  ██   ████  ',
+    '█   █   █   █ ',
+    ' ████   ████  ',
+  ].join('\n');
+  const row = (k, ...v) => h('p', {}, span('k', k + ': '), ...v);
+  print(h('div', { class: 'fetch' },
+    h('pre', { class: 'logo', 'aria-hidden': 'true' }, logo),
+    h('div', { class: 'info' },
+      h('p', { class: 'host' }, 'gabriela@la-serena'),
+      h('p', { class: 'rule' }, '──────────────────'),
+      row('Nombre', 'Gabriela Barrera Ángel'),
+      row('Rol', 'Ingeniera en Computación'),
+      row('Ubicación', 'La Serena, Chile'),
+      row('Trabajo', 'Hospital San Juan de Dios (2023 — hoy)'),
+      row('Stack', 'C# · GeneXus · Python · Django · Kotlin · JavaScript'),
+      row('Proyectos', `${PROJECTS.length} → `, runBtn('ls')),
+      row('Idiomas', 'español · inglés · japonés'),
+      row('Contacto', runBtn('contacto')),
+      h('div', { class: 'swatch', 'aria-hidden': 'true' },
+        ...['#22332a', '#7a9a85', '#4ee38a', '#c4f2d0', '#ffb547', '#ff7a6b'].map(c => h('span', { style: `background:${c}` }))))));
+}
+
+// Tab: autocompleta comandos y, tras cat/open, nombres de proyecto
+function complete() {
+  const v = input.value; const parts = v.split(/\s+/);
+  let pool, prefix;
+  if (parts.length <= 1) { pool = Object.keys(COMMANDS).filter(c => c !== 'sudo'); prefix = ''; }
+  else if (['cat', 'open'].includes(parts[0])) {
+    pool = PROJECTS.map(p => p.id).concat(parts[0] === 'open' ? Object.keys(LINKS) : []);
+    prefix = parts[0] + ' ';
+  } else return;
+  const word = parts[parts.length - 1].toLowerCase();
+  const hits = pool.filter(c => c.startsWith(word));
+  if (hits.length === 1) { input.value = prefix + hits[0] + ' '; syncLen(); }
+  else if (hits.length > 1) { echo(v); print(h('p', { class: 'dim' }, hits.join('   '))); screen.scrollTop = screen.scrollHeight; }
+}
+
+function syncLen() { input.style.setProperty('--len', input.value.length); }
+input.addEventListener('input', syncLen);
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Tab' && input.value) { e.preventDefault(); complete(); }
+  else if (e.key === 'ArrowUp' && history.length) { e.preventDefault(); hIdx = Math.max(0, hIdx - 1); input.value = history[hIdx]; syncLen(); }
+  else if (e.key === 'ArrowDown' && history.length) { e.preventDefault(); hIdx = Math.min(history.length, hIdx + 1); input.value = history[hIdx] ?? ''; syncLen(); }
+  else if (e.key === 'l' && e.ctrlKey) { e.preventDefault(); COMMANDS.clear[1](); }
+});
+$('#prompt').addEventListener('submit', (e) => { e.preventDefault(); exec(input.value); });
+document.querySelector('.chips').addEventListener('click', (e) => { const c = e.target.closest('button')?.dataset.cmd; if (c) exec(c); });
+screen.addEventListener('click', (e) => {
+  if (e.target.closest('a, button') || getSelection().toString()) return;
+  input.focus();
+});
+
+const clock = $('#clock');
+function tick() {
+  clock.textContent = new Intl.DateTimeFormat('es-CL', { timeZone: 'America/Santiago', hour: '2-digit', minute: '2-digit',
+    day: '2-digit', month: 'short' }).format(new Date());
+}
+tick(); setInterval(tick, 30000);
+
+// Arranque: se teclea "neofetch" (~350 ms) y su salida aparece completa; reduced-motion lo salta
+(async function boot() {
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+    for (const ch of 'neofetch') { input.value += ch; syncLen(); await new Promise(r => setTimeout(r, 40)); }
+  input.value = ''; syncLen();
+  echo('neofetch'); neofetch();
+  print(h('p', { class: 'dim' }, 'Bienvenida/o. Escribe ', runBtn('help'), ' o elige un comando abajo.'));
+  // Enlace directo: #ls o #cat/akari ejecuta ese comando al abrir (open queda fuera: no abre ventanas solo)
+  const deep = decodeURIComponent(location.hash.slice(1)).replace(/\//g, ' ').trim();
+  if (deep && !/^open/i.test(deep)) exec(deep);
+  if (matchMedia('(hover: hover)').matches) input.focus();
+})();
+</script>
 </body>
 </html>
