@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabriela Barrera Ángel · Ingeniera en Computación</title>
+<meta name="description" content="Portafolio de Gabriela Barrera Ángel, Ingeniera en Computación en La Serena, Chile.">
+<style>
+  :root {
+    --bg: #f6f7f8; --card: #fff; --text: #1d2730; --muted: #5d6b77;
+    --accent: #2c3e4a; --accent-2: #3f7f96; --line: #dde3e8; --chip: #e8eef2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141b20; --card: #1c252c; --text: #e6ecf0; --muted: #9aa9b5;
+      --accent: #0f161b; --accent-2: #7fc1d8; --line: #2b3740; --chip: #26323a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: var(--accent-2); }
+  header { background: var(--accent); color: #fff; padding: 72px 16px 56px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+  header .wrap { padding: 0; }
+  h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; margin: 0 0 8px; font-weight: 600; }
+  header p { margin: 0; color: #c9d6de; font-size: 1.15rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .links a { color: #fff; text-decoration: none; border: 1px solid #ffffff55;
+    padding: 8px 16px; border-radius: 999px; }
+  .links a:hover, .links a:focus-visible { background: #ffffff1f; }
+  section { padding: 48px 0 8px; }
+  h2 { font-size: 1.5rem; margin: 0 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--line); }
+  h3 { font-size: 1.1rem; margin: 0; }
+  .item { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px; margin-bottom: 16px; }
+  .meta { color: var(--muted); font-size: .92rem; margin: 2px 0 8px; }
+  .item p { margin: 8px 0 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+  .grid .item { margin: 0; display: flex; flex-direction: column; }
+  .grid .item p { flex: 1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; padding: 0; list-style: none; }
+  .tags li { background: var(--chip); border-radius: 999px; padding: 2px 12px; font-size: .85rem; }
+  .private { color: var(--muted); font-size: .85rem; margin-top: 12px; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  footer { color: var(--muted); text-align: center; padding: 48px 16px; font-size: .9rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Gabriela Barrera Ángel</h1>
+    <p>Ingeniera en Computación · La Serena, Chile</p>
+    <nav class="links" aria-label="Contacto">
+      <a href="mailto:g.barrera.angel@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/gabriela-barrera-angel">LinkedIn</a>
+      <a href="https://github.com/GBarrera817">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="exp">
+    <h2 id="exp">Experiencia</h2>
+
+    <article class="item">
+      <h3>Ingeniera de software · Hospital San Juan de Dios</h3>
+      <div class="meta">Marzo 2023 – actualidad · La Serena</div>
+      <p>Mantenimiento y actualización de los sistemas informáticos propios del hospital, implementados en C#.</p>
+      <p>Mantenimiento de Adhara, ERP desarrollado especialmente para el Hospital de La Serena, construido en GeneXus.</p>
+      <ul class="tags"><li>C#</li><li>GeneXus</li><li>ERP</li></ul>
+    </article>
+
+    <article class="item">
+      <h3>Back End Developer · RAM+</h3>
+      <div class="meta">Diciembre 2021 – agosto 2022 · Santiago</div>
+      <p>Implementación de un ERP para la gestión y construcción de activos de la empresa, con Django en el backend y JavaScript vanilla en el frontend.</p>
+      <ul class="tags"><li>Django</li><li>JavaScript</li></ul>
+    </article>
+
+    <article class="item">
+      <h3>Desarrolladora Django · Delaporte Digital</h3>
+      <div class="meta">Diciembre 2020 – febrero 2021 · Santiago</div>
+      <ul class="tags"><li>Django</li><li>Python</li></ul>
+    </article>
+
+    <article class="item">
+      <h3>Python Developer · Laboratorio ALGES, Universidad de Chile</h3>
+      <div class="meta">Septiembre 2020 – enero 2021 · Santiago</div>
+      <p>Script para automatizar el empaquetamiento y versionamiento para el usuario final del software geoestadístico Andes.</p>
+      <ul class="tags"><li>Python</li><li>Automatización</li></ul>
+    </article>
+
+    <article class="item">
+      <h3>Python Developer · CRT Ltda.</h3>
+      <div class="meta">Septiembre 2020 – enero 2021 · Santiago</div>
+      <p>Herramienta de cruce de datos entre archivos Transbank (pagos de crédito y débito) y la plataforma Bsale para realizar la conciliación bancaria de la empresa.</p>
+      <ul class="tags"><li>Python</li><li>Datos</li></ul>
+    </article>
+  </section>
+
+  <section aria-labelledby="proj">
+    <h2 id="proj">Proyectos</h2>
+    <div class="grid">
+      <article class="item">
+        <h3><a href="https://github.com/GBarrera817/akari">Akari</a></h3>
+        <p>Streaming de animación para Windows con caché persistente, modo sin conexión y respaldos.</p>
+        <ul class="tags"><li>JavaScript</li><li>Escritorio</li></ul>
+      </article>
+      <article class="item">
+        <h3>Paralela</h3>
+        <p>Calendario menstrual y de anticonceptivos para parejas de mujeres lesbianas y bisexuales.</p>
+        <ul class="tags"><li>Kotlin</li><li>Android</li><li>Firebase</li></ul>
+        <div class="private">Repositorio privado</div>
+      </article>
+      <article class="item">
+        <h3>Registro de Redes</h3>
+        <p>Registro de usuarios, redes y reuniones con alertas y sincronización vía Google Sheets.</p>
+        <ul class="tags"><li>HTML</li><li>JavaScript</li><li>Google Sheets</li></ul>
+        <div class="private">Repositorio privado</div>
+      </article>
+      <article class="item">
+        <h3>cmus-win</h3>
+        <p>Reproductor de música de terminal nativo para Windows, con letras sincronizadas y romaji.</p>
+        <ul class="tags"><li>C#</li><li>Terminal</li></ul>
+        <div class="private">Repositorio privado</div>
+      </article>
+      <article class="item">
+        <h3>Rea</h3>
+        <p>Descargador de video y audio basado en yt-dlp para escritorio, Windows 7 y Android.</p>
+        <ul class="tags"><li>Kotlin</li><li>Android</li></ul>
+        <div class="private">Repositorio privado</div>
+      </article>
+      <article class="item">
+        <h3>Versada</h3>
+        <p>App para visualizar letras de canciones en tiempo real.</p>
+        <ul class="tags"><li>Kotlin</li><li>Android</li></ul>
+        <div class="private">Repositorio privado</div>
+      </article>
+      <article class="item">
+        <h3><a href="https://github.com/GBarrera817/ManoOpenCV">ManoOpenCV</a></h3>
+        <p>Mano robótica controlada mediante visión por computador.</p>
+        <ul class="tags"><li>OpenCV</li><li>Robótica</li></ul>
+      </article>
+      <article class="item">
+        <h3><a href="https://github.com/GBarrera817/productos-api">productos-api</a></h3>
+        <p>API REST de estudio construida con Spring Boot.</p>
+        <ul class="tags"><li>Java</li><li>Spring Boot</li></ul>
+      </article>
+      <article class="item">
+        <h3><a href="https://github.com/GBarrera817/dashboard_gastos">Dashboard de gastos</a></h3>
+        <p>App para llevar el control de los gastos del mes.</p>
+        <ul class="tags"><li>JavaScript</li></ul>
+      </article>
+      <article class="item">
+        <h3><a href="https://github.com/GBarrera817/JProlog_Viajes">JProlog Viajes</a></h3>
+        <p>Mini sistema experto con Prolog y Java.</p>
+        <ul class="tags"><li>Java</li><li>Prolog</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="more">
+    <h2 id="more">Formación y aptitudes</h2>
+    <div class="cols">
+      <div class="item">
+        <h3>Educación</h3>
+        <p>Ingeniería en Computación y Licenciatura en Ciencias de la Computación<br>
+        <span class="meta">Universidad de La Serena · 2012 – 2018</span></p>
+      </div>
+      <div class="item">
+        <h3>Certificaciones</h3>
+        <p>Fundamentos en Ciberseguridad<br>Claude 101 (certificate of completion)</p>
+      </div>
+      <div class="item">
+        <h3>Idiomas</h3>
+        <p>Español (nativo)<br>Inglés (profesional)<br>Japonés (básico)</p>
+      </div>
+    </div>
+    <ul class="tags" aria-label="Aptitudes">
+      <li>Inteligencia artificial</li><li>Arquitectura de seguridad</li><li>GeneXus</li><li>C#</li>
+      <li>Python</li><li>Django</li><li>JavaScript</li><li>Kotlin</li><li>Java</li>
+    </ul>
+  </section>
+</main>
+
+<footer>© Gabriela Barrera Ángel</footer>
+</body>
+</html>
